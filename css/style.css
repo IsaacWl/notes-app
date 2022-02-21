@@ -1,0 +1,251 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0;
+    background: #f1f1f1;
+    margin: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.container {
+    display: grid;
+    place-items: center;
+}
+.add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 50px;
+    font-weight: 1000;
+    /* background: #ccc; */
+    vertical-align: center;
+    background: #f1ff55;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    padding: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    user-select: none;
+    transition: 500ms all ease;
+}
+.pad {
+    padding: 0;
+    margin-bottom: 10px;
+}
+.m-b {
+    margin-bottom: 15px;
+}
+.add:hover {
+    background: #f1fff1;
+}
+.modal-container {
+    /* max-width: 100vw;
+    width: 100%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 50px; */
+}
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #555;
+    /* padding: 10px; */
+    max-width: 1000px;
+    width: 100%;
+    font-size: 20px;
+    z-index: 1;
+    animation: modal 500ms forwards;
+    display: none;
+    box-shadow: 1px 1px 5px 1px #ccc;
+}
+@keyframes modal {
+    from {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+.title {
+    font-size: 25px;
+    background: #f1ff55;
+    padding: 10px;
+}
+.close, .close-note {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    padding: 10px;
+    font-weight: 1000;
+    cursor: pointer;
+}
+.close:hover {
+    color: #ff0055;
+}
+.content {
+    padding: 10px;
+    background: #ffffe0;
+}
+.buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+    padding: 5px;
+}
+.btn {
+    background: #00f;
+    color: #ccc;
+}
+.btn-cancel {
+    background: #ff0055;
+    color: #555;
+}
+.btn:hover, .btn-cancel:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+.btn-cancel, .btn {
+    padding:  10px;
+    border-radius: 5px;
+    border: none;
+
+}
+.modal-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .1);
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+.none {
+    animation: hide 500ms forwards;
+    display: none;
+}
+@keyframes hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+label {
+    display: block;
+}
+.ul-menu {
+    position: absolute;
+    width: 100px;
+    top: 20px;
+    font-size: 15px;
+    background: #f1f1f1;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    display: none;
+    left: -50px;
+}
+.ul-menu > li {
+    padding: 10px;
+    border-radius: 5px;
+    transition: 400ms all ease;
+}
+.ul-menu > li:hover {
+    color: #00f;
+    cursor: pointer;
+    background: #f1ff55;
+}
+.form-text {
+    width: 90vw;
+    border: 1px solid #ccc;
+    padding: 1.55vh 1vw;
+    font-size: 1.1rem;
+    outline: none;
+    margin-bottom: 10px;
+}
+.textarea {
+    resize: none;
+    height: 100px;
+}
+.row {
+    /* display: flex; */
+    display: grid;
+    /* flex-flow: column; */
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    max-width: 700px;
+    width: 100%;
+    font-size: 25px;
+    align-items: center;
+    place-items: center;
+}
+.card {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+    transform: rotate(-1deg);
+    box-shadow: 1px 1px 1px 1px #ddd;
+    overflow: hidden;
+}
+.note-title {
+    background: #f1fc5c;
+    padding: 10px;
+}
+.note-content {
+    background: #ffffe0;
+    padding: 10px;
+    height: 15vh;
+}
+.close-note {
+    font-weight: 500;
+    color: #555;
+}
+.close-note:hover {
+    color: #ff0055;
+}
+.menu {
+    height: 30px;
+    width: 30px;
+    left: 85%;
+    position: absolute;
+    top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-end;
+    place-items: center;
+}
+.menu:hover > div {
+    background: #555;
+}
+
+.menu:hover > .ul-menu {
+    display: block;
+    transform: translate(0, -5px);
+}
+.menu > div {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #ff0055;
+}
+@media screen and (min-width: 750px) {
+    .modal {
+        max-width: 50vw;
+    }
+    .form-text {
+        width: 100%;
+    }
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

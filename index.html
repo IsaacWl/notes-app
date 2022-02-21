@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Notes app</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>Javascript Modal.</h1>
+        <div class='add m-b' onclick='openModal()'>
+          <span class='pad'>+</span>
+        </div>
+    </div>
+    <div class="modal-container">
+        <div id='modal' class='modal'>
+
+            <div class='title'>
+                <h4>Add note</h4>
+                <span class='close' onclick='closeModal()'>&times;</span>
+        
+            </div>
+    
+            <div class='content'>
+                <form>
+                    <label for='task'>note title</label>
+                    <input spellcheck='false' class='form-text' type='text' name='task' id='task' placeholder="your title.."/>
+                    <label for="content">note content</label>
+                    <textarea id='content' spellcheck='false' class='form-text textarea' name='post' placeholder='post...'></textarea> 
+                    <div class="buttons">
+                        <button onclick='closeModal()' class='btn-cancel' type='button'>cancel</button>
+                        <button id='addPost' class='btn' type='button'>add post</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class='container'>
+        <div id='posts' class="row"></div>
+    </div>
+    <div id='modalOpen' class="modal-open"></div>
+    <script src="./js/script.js"></script>
+</body>
+</html>
