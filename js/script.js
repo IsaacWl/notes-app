@@ -47,7 +47,6 @@ function addPostToDocument(post) {
     const contentDiv = document.createElement('div');
     const titleDiv = document.createElement('div');
     const close = document.createElement('span');
-    // const menu = createCardMenu(post.title);
     
     close.textContent = 'x';
     h5.textContent = post.title;
