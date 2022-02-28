@@ -47,7 +47,7 @@ function addPostToDocument(post) {
     const contentDiv = document.createElement('div');
     const titleDiv = document.createElement('div');
     const close = document.createElement('span');
-    
+   
     close.textContent = 'x';
     h5.textContent = post.title;
     p.textContent = post.content;
