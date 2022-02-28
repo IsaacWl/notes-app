@@ -121,25 +121,3 @@ function handleEdit(e) {
         localStorage.setItem('notes', JSON.stringify(notes))
     })
 }
-
-// function createCardMenu(id) {
-//     const div = document.createElement('div')
-//     div.className = 'menu'
-//     const ul = document.createElement('ul')
-//     const editLi = document.createElement('li')
-//     const deleteLi = document.createElement('li')
-//     editLi.textContent = 'edit note'
-//     deleteLi.textContent = 'delete note'
-//     deleteLi.setAttribute('data-id', id)
-//     deleteLi.addEventListener('click', handleDelete)
-//     ul.append(editLi, deleteLi)
-//     ul.classList.add('ul-menu')
-//     let i = 0;
-//     while (i < 9) {
-//         const divs = document.createElement('div')
-//         div.append(divs)
-//         i++;
-//     }
-//     div.append(ul)
-//     return div
-// }
